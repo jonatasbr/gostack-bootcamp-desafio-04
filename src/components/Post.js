@@ -5,9 +5,9 @@ function Post({ author, date, content, comments }) {
   return (
     <div className="post">
       <div className="post-header">
-        <img className="avatar" src={foto1} />
+        <img className="avatar" src={author.avatar} />
         <div className="details">
-          <span> {author} </span>
+          <span> {author.name} </span>
           <span> {date} </span>
         </div>
       </div>
@@ -23,9 +23,9 @@ function PostComments({ comments }) {
       <div className="divider" />
       {comments.map(comment => (
         <div key={comment.id} className="comment">
-          <img className="avatar" src={foto1} />
+          <img className="avatar" src={comment.author.avatar} />
           <p>
-            <span>{comment.author}</span>
+            <span>{comment.author.name}</span>
             {comment.content}
           </p>
         </div>
